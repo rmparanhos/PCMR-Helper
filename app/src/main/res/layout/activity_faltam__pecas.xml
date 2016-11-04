@@ -16,7 +16,8 @@
         android:id="@+id/buttonSalvar"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="152dp" />
+        android:layout_marginBottom="152dp"
+        android:onClick="chamaListaPc"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -25,7 +26,8 @@
         android:id="@+id/buttonVoltarMontagem"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="47dp" />
+        android:layout_marginBottom="47dp"
+        android:onClick="voltaMontagem"/>
 
     <TextView
         android:layout_width="wrap_content"

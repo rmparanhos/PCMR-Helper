@@ -16,7 +16,8 @@
         android:id="@+id/buttonNovoComputador"
         android:layout_marginTop="168dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="chamaNovoComputador"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -25,5 +26,6 @@
         android:id="@+id/buttonListaComputadores"
         android:layout_marginTop="80dp"
         android:layout_below="@+id/buttonNovoComputador"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="chamaListaComputadores"/>
 </RelativeLayout>

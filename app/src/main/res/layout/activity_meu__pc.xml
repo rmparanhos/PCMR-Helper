@@ -26,7 +26,8 @@
         android:text="Finalizar Montagem"
         android:id="@+id/buttonFimMontagem"
         android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="chamaVerificar"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -34,7 +35,8 @@
         android:text="Voltar para escolha de peças"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="voltaMontandoPc"/>
 
     <ListView
         android:layout_width="wrap_content"

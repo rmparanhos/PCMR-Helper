@@ -16,7 +16,8 @@
         android:id="@+id/buttonCompTrabson"
         android:layout_above="@+id/buttonCompJogos"
         android:layout_alignEnd="@+id/buttonCompGeral"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="50dp"
+        android:onClick="chamaMontandoTrab"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -25,7 +26,8 @@
         android:id="@+id/buttonCompJogos"
         android:layout_above="@+id/buttonCompGeral"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="50dp"
+        android:onClick="chamaMontandoJogos"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -33,7 +35,8 @@
         android:text="Computador para uso Geral"
         android:id="@+id/buttonCompGeral"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="chamaMontandoGeral"/>
 
     <TextView
         android:layout_width="wrap_content"

@@ -16,7 +16,8 @@
         android:id="@+id/buttonPlacaMae"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/buttonProcessador" />
+        android:layout_toStartOf="@+id/buttonProcessador"
+        android:onClick="chamaPlacaMae"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -24,7 +25,8 @@
         android:text="MEU PC"
         android:id="@+id/buttonMeuPc"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="chamaMeuPc"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -33,7 +35,8 @@
         android:id="@+id/buttonRAM"
         android:layout_below="@+id/buttonPlacaMae"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/buttonPlacaMae" />
+        android:layout_alignEnd="@+id/buttonPlacaMae"
+        android:onClick="chamaRAM"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -42,7 +45,8 @@
         android:id="@+id/buttonSSD"
         android:layout_below="@+id/buttonRAM"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/buttonRAM" />
+        android:layout_alignEnd="@+id/buttonRAM"
+        android:onClick="chamaSSD"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -51,7 +55,8 @@
         android:id="@+id/buttonGabinete"
         android:layout_below="@+id/buttonSSD"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/buttonSSD" />
+        android:layout_alignEnd="@+id/buttonSSD"
+        android:onClick="chamaGabinete"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -60,7 +65,8 @@
         android:id="@+id/buttonVGA"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/buttonProcessador" />
+        android:layout_toEndOf="@+id/buttonProcessador"
+        android:onClick="chamaPlacaVideo"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -69,7 +75,8 @@
         android:id="@+id/buttonHD"
         android:layout_below="@+id/buttonVGA"
         android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/buttonVGA" />
+        android:layout_alignStart="@+id/buttonVGA"
+        android:onClick="chamaHD"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -78,7 +85,8 @@
         android:id="@+id/buttonFonte"
         android:layout_alignTop="@+id/buttonSSD"
         android:layout_alignStart="@+id/buttonHD"
-        android:layout_alignEnd="@+id/buttonHD" />
+        android:layout_alignEnd="@+id/buttonHD"
+        android:onClick="chamaFonte"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -87,7 +95,8 @@
         android:id="@+id/buttonCoolerProc"
         android:layout_below="@+id/buttonFonte"
         android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/buttonFonte" />
+        android:layout_alignStart="@+id/buttonFonte"
+        android:onClick="chamaCoolerProc"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -95,7 +104,8 @@
         android:text="Processador"
         android:id="@+id/buttonProcessador"
         android:layout_above="@+id/buttonPlacaMae"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="chamaProcessador"/>
 
     <TextView
         android:layout_width="wrap_content"
