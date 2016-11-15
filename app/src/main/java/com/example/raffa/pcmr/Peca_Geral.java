@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class Peca_Geral extends ListActivity {
+public class Peca_Geral extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,55 +69,22 @@ public class Peca_Geral extends ListActivity {
 
         //Mexendo no Listview
 
-       /* System.out.println("Entered ListViewActivity");
-
-        ArrayList<HashMap<String, String>> Items = new ArrayList<HashMap<String, String>>();
-
-        System.out.println("Arraylist hashmap declared");
-
-        // Reading all values
-        Log.d("Reading: ", "Reading all contacts..");
-
+        // TodoDatabaseHandler is a SQLiteOpenHelper class connecting to SQLite
+        //TodoDatabaseHandler handler = new TodoDatabaseHandler(this);
+        // Get access to the underlying writeable database
+        //SQLiteDatabase db = handler.getWritableDatabase();
+        // Query for items from the database and get a cursor back
+        //Cursor todoCursor = db.rawQuery("SELECT  * FROM todo_items", null);
         Cursor c = myDbHelper.lerBD("processador");
         c.moveToFirst();
-        do{
-            // Writing values to map
-            HashMap<String, String> map = new HashMap<String, String>();
-            map.put("nome",c.getString(0));
-            map.put("nucleos", c.getString(1));
-            map.put("threads", c.getString(2));
-            map.put("frequencia", c.getString(3));
-            map.put("socket", c.getString(4));
-
-            Items.add(map);
-        }while(c.moveToNext());
-
-        ListAdapter adapter = new SimpleAdapter(this, Items, R.layout.activity_peca__geral,
-                new String[] { "nome", "nucleos", "threads", "frequencia","socket" },
-                new int[] {R.id.nome, R.id.time, R.id.capacity, R.id.price });
-
-        setListAdapter(adapter);*/
-
-
-
-        // Query for all people contacts using the Contacts.People convenience class.
-        // Put a managed wrapper around the retrieved cursor so we don't have to worry about
-        // requerying or closing it as the activity changes state.
-        Cursor mCursor = myDbHelper.lerBD("processador");
-        startManagingCursor(mCursor);
-
-        // Now create a new list adapter bound to the cursor.
-        // SimpleListAdapter is designed for binding to a Cursor.
-        ListAdapter adapter = new SimpleCursorAdapter(
-                this, // Context.
-                android.R.layout.two_line_list_item,  // Specify the row template to use (here, two columns bound to the two retrieved cursorrows).
-                mCursor,                                              // Pass in the cursor to bind to.
-                new String[] {"nome", "nucleos"},           // Array of cursor columns to bind to.
-                new int[] {android.R.id.text1, android.R.id.text2});  // Parallel array of which template objects to bind to those columns.
-
-        // Bind to our new adapter.
-        setListAdapter(adapter);
-
+        // Find ListView to populate
+        ListView lvItems = (ListView) findViewById(R.id.listViewPeca_Geral);
+        // Setup cursor adapter using cursor from last step
+        ProcessadorCursorAdapter procAdapter = new ProcessadorCursorAdapter(this, c);
+        // Attach cursor adapter to the ListView
+        lvItems.setAdapter(procAdapter);
+        // Switch to new cursor and update contents of ListView
+        //procAdapter.changeCursor(newCursor);
     }
 
 
