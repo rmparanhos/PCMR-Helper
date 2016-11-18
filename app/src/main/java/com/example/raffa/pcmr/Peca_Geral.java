@@ -3,9 +3,11 @@ package com.example.raffa.pcmr;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -75,7 +77,11 @@ public class Peca_Geral extends AppCompatActivity {
         //SQLiteDatabase db = handler.getWritableDatabase();
         // Query for items from the database and get a cursor back
         //Cursor todoCursor = db.rawQuery("SELECT  * FROM todo_items", null);
-        Cursor c = myDbHelper.lerBD("processador");
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String nome = preferences.getString("NomeTabela", "");
+
+        Cursor c = myDbHelper.lerBD(nome);
         c.moveToFirst();
         // Find ListView to populate
         ListView lvItems = (ListView) findViewById(R.id.listViewPeca_Geral);

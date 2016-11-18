@@ -20,7 +20,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     //The Android's default system path of your application database.
     private static String DB_PATH = "/data/data/com.example.raffa.pcmr/databases/";
 
-    private static String DB_NAME = "pcmrDB3.db";
+    private static String DB_NAME = "pcmrDB4.db";
 
     private SQLiteDatabase myDataBase;
 

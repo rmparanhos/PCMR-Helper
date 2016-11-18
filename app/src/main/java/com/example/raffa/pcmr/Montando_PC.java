@@ -1,12 +1,16 @@
 package com.example.raffa.pcmr;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 public class Montando_PC extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "";
+    public static final String PREFS_NAME = "MyPrefsFile";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +27,10 @@ public class Montando_PC extends AppCompatActivity {
         String message = "Processador";
         processador.putExtra(EXTRA_MESSAGE, message);
         startActivity(processador);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("NomeTabela","processador");
+        editor.apply();
     }
 
     protected void chamaPlacaMae(View view){
@@ -31,6 +39,10 @@ public class Montando_PC extends AppCompatActivity {
         String message = "Placa Mae";
         placaMae.putExtra(EXTRA_MESSAGE, message);
         startActivity(placaMae);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("NomeTabela","placa_mae");
+        editor.apply();
     }
 
     protected void chamaHD(View view){
