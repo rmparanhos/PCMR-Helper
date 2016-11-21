@@ -51,6 +51,10 @@ public class Montando_PC extends AppCompatActivity {
         String message = "HD";
         hd.putExtra(EXTRA_MESSAGE, message);
         startActivity(hd);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("NomeTabela","hd");
+        editor.apply();
     }
 
     protected void chamaSSD(View view){
@@ -59,6 +63,10 @@ public class Montando_PC extends AppCompatActivity {
         String message = "SSD";
         ssd.putExtra(EXTRA_MESSAGE, message);
         startActivity(ssd);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("NomeTabela","ssd");
+        editor.apply();
     }
 
     protected void chamaRAM(View view){
@@ -67,6 +75,10 @@ public class Montando_PC extends AppCompatActivity {
         String message = "RAM";
         ram.putExtra(EXTRA_MESSAGE, message);
         startActivity(ram);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("NomeTabela","ram");
+        editor.apply();
     }
 
     protected void chamaGabinete(View view){
@@ -75,6 +87,10 @@ public class Montando_PC extends AppCompatActivity {
         String message = "Gabinete";
         gabinete.putExtra(EXTRA_MESSAGE, message);
         startActivity(gabinete);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("NomeTabela","gabinete");
+        editor.apply();
     }
 
     protected void chamaFonte(View view){
@@ -83,6 +99,10 @@ public class Montando_PC extends AppCompatActivity {
         String message = "Fonte";
         fonte.putExtra(EXTRA_MESSAGE, message);
         startActivity(fonte);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("NomeTabela","fonte");
+        editor.apply();
     }
 
     protected void chamaPlacaVideo(View view){
@@ -91,6 +111,10 @@ public class Montando_PC extends AppCompatActivity {
         String message = "Placa de Video";
         placaVideo.putExtra(EXTRA_MESSAGE, message);
         startActivity(placaVideo);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("NomeTabela","placa_video");
+        editor.apply();
     }
 
     protected void chamaCoolerProc(View view){
@@ -99,5 +123,9 @@ public class Montando_PC extends AppCompatActivity {
         String message = "Cooler do Processador";
         coolerProc.putExtra(EXTRA_MESSAGE, message);
         startActivity(coolerProc);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("NomeTabela","cooler_processador");
+        editor.apply();
     }
 }

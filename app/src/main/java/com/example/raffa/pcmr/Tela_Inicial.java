@@ -11,7 +11,7 @@ public class Tela_Inicial extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela__inicial);
-        System.out.println("tela inicial criada");
+
     }
 
     protected void chamaNovoComputador(View view){

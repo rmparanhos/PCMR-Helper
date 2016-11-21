@@ -26,38 +26,73 @@
         android:orientation="horizontal"
         android:layout_marginTop="45dp">
         <TextView
-            android:id="@+id/tvNome"
+            android:id="@+id/tvColuna1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceLarge" />
         <TextView
-            android:id="@+id/tvNucleos"
+            android:id="@+id/tvColuna2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Nucleos"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium" />
         <TextView
-            android:id="@+id/tvThread"
+            android:id="@+id/tvColuna3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Threads"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium" />
         <TextView
-            android:id="@+id/tvFrequencia"
+            android:id="@+id/tvColuna4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Freq."
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium" />
         <TextView
-            android:id="@+id/tvSocket"
+            android:id="@+id/tvColuna5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Socket"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/tvColuna6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/tvColuna7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/tvColuna8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/tvColuna9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/tvColuna10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 </RelativeLayout>

@@ -20,7 +20,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     //The Android's default system path of your application database.
     private static String DB_PATH = "/data/data/com.example.raffa.pcmr/databases/";
 
-    private static String DB_NAME = "pcmrDB4.db";
+    private static String DB_NAME = "pcmrDB5.db";
 
     private SQLiteDatabase myDataBase;
 
@@ -155,7 +155,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     // You could return cursors by doing "return myDataBase.query(....)" so it'd be easy
     // to you to create adapters for your views.
 
-    public Cursor lerBD(String s){
+    public Cursor lerBD(String s, String objetivo){
+        if(objetivo != "geral"){
+            String kery = "SELECT * FROM "+s+" WHERE objetivo =\""+objetivo+"\"";
+            return myDataBase.rawQuery(kery,null);
+        }
         return myDataBase.query(s,null,null,null,null,null,null);
     }
 }

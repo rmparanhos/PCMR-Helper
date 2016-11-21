@@ -80,15 +80,15 @@ public class Peca_Geral extends AppCompatActivity {
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String nome = preferences.getString("NomeTabela", "");
-
-        Cursor c = myDbHelper.lerBD(nome);
+        String objetivo = preferences.getString("Objetivo","");
+        Cursor c = myDbHelper.lerBD(nome,objetivo);
         c.moveToFirst();
         // Find ListView to populate
         ListView lvItems = (ListView) findViewById(R.id.listViewPeca_Geral);
         // Setup cursor adapter using cursor from last step
-        ProcessadorCursorAdapter procAdapter = new ProcessadorCursorAdapter(this, c);
+        PecaCursorAdapter pecaAdapter = new PecaCursorAdapter(this, c);
         // Attach cursor adapter to the ListView
-        lvItems.setAdapter(procAdapter);
+        lvItems.setAdapter(pecaAdapter);
         // Switch to new cursor and update contents of ListView
         //procAdapter.changeCursor(newCursor);
     }
