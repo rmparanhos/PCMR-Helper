@@ -38,14 +38,81 @@
         android:layout_centerHorizontal="true"
         android:onClick="voltaMontandoPc"/>
 
-    <ListView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView4"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/processadorTV"
+        android:layout_marginTop="35dp"
         android:layout_below="@+id/editTextNomePC"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
-        android:layout_marginTop="15dp"
-        tools:listitem="@android:layout/simple_list_item_checked" />
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/placa_maeTV"
+        android:layout_below="@+id/processadorTV"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/ramTV"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/placa_maeTV"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/ssdTV"
+        android:layout_below="@+id/ramTV"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="34dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/gabineteTV"
+        android:layout_below="@+id/ssdTV"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/placa_videoTV"
+        android:layout_alignTop="@+id/placa_maeTV"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/hdTV"
+        android:layout_alignTop="@+id/ramTV"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/fonteTV"
+        android:layout_alignTop="@+id/ssdTV"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/cooler_procTV"
+        android:layout_alignTop="@+id/gabineteTV"
+        android:layout_alignStart="@+id/fonteTV" />
 
 </RelativeLayout>

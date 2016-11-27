@@ -20,7 +20,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     //The Android's default system path of your application database.
     private static String DB_PATH = "/data/data/com.example.raffa.pcmr/databases/";
 
-    private static String DB_NAME = "pcmrDB5.db";
+    private static String DB_NAME = "pcmrDB11.db";
 
     private SQLiteDatabase myDataBase;
 
@@ -156,10 +156,25 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     // to you to create adapters for your views.
 
     public Cursor lerBD(String s, String objetivo){
-        if(objetivo != "geral"){
-            String kery = "SELECT * FROM "+s+" WHERE objetivo =\""+objetivo+"\"";
-            return myDataBase.rawQuery(kery,null);
+        if(objetivo != "geral" && (s =="placa_mae" || s == "processador" || s == "placa_video" || s=="ram")){
+            return myDataBase.query(s,null,"objetivo = \""+objetivo+"\"",null,null,null,null);
         }
         return myDataBase.query(s,null,null,null,null,null,null);
+    }
+
+    public Cursor lerTabelaListaPC(){
+        return myDataBase.query("meu_pc",null,null,null,null,null,null);
+    }
+
+    public void inserePc(String nome,String processador, String placa_mae, String hd,String ssd, String ram, String gabinete, String placa_video, String fonte,String cooler_processador){
+        myDataBase = this.getWritableDatabase();
+        String s = "INSERT INTO meu_pc VALUES(\""+nome+"\",\""+processador+"\",\""+placa_mae+"\",\""+hd+"\",\""+ram+"\",\""+ssd+"\",\""+placa_video+"\",\""+fonte+"\",\""+gabinete+"\",\""+cooler_processador+"\")";
+        myDataBase.execSQL(s);
+    }
+
+    public void deletarPc(String nome){
+        myDataBase = this.getWritableDatabase();
+        String s = "DELETE FROM meu_pc WHERE _id="+"\""+nome+"\";";
+        myDataBase.execSQL(s);
     }
 }
