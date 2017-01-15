@@ -134,6 +134,7 @@ public class Lista_Computadores extends AppCompatActivity {
         Toast.makeText(context,mensagem, duration).show();
         Intent reload = new Intent(this,Lista_Computadores.class);
         startActivity(reload);
+        finish();
     }
 
     public void alterarPC(int i){

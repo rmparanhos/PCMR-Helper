@@ -113,10 +113,17 @@ public class Peca_Geral extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        if(item.getItemId() == R.id.salvar_peca){
+        int i = item.getItemId();
+        if(i == R.id.salvar_peca){
             salvaPeca(info.position);
         }
-        else {
+        else if(i == R.id.resetar_peca){
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            String nome = preferences.getString("NomeTabela", "");
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("peca"+nome,"");
+            editor.apply();
+        }else{
             return false;
         }
         return true;

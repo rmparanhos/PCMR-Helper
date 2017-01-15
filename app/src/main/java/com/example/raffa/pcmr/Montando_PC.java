@@ -128,4 +128,18 @@ public class Montando_PC extends AppCompatActivity {
         editor.putString("NomeTabela","cooler_processador");
         editor.apply();
     }
+    protected void resetAll(View view){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("pecaprocessador","");
+        editor.putString("pecaplaca_mae","");
+        editor.putString("pecahd","");
+        editor.putString("pecassd","");
+        editor.putString("pecaram","");
+        editor.putString("pecagabinete","");
+        editor.putString("pecafonte","");
+        editor.putString("pecaplaca_video","");
+        editor.putString("pecacooler_processador","");
+        editor.apply();
+    }
 }

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLOutput;
 
 public class Faltam_Pecas extends AppCompatActivity {
@@ -38,10 +39,6 @@ public class Faltam_Pecas extends AppCompatActivity {
         } catch (SQLException sqle) {
             throw sqle;
         }
-        CharSequence mensagem = "Salvo com sucesso!";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context,mensagem, duration);
-        toast.show();
         Intent listaComputadores = new Intent(this, Lista_Computadores.class);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String processador = preferences.getString("pecaprocessador","");
@@ -55,22 +52,43 @@ public class Faltam_Pecas extends AppCompatActivity {
         String cooler_processador = preferences.getString("pecacooler_processador","");
         String nomePcS = preferences.getString("nomePC","");
         System.out.println(nomePcS);
-        myDbHelper.inserePc(nomePcS,processador,placa_mae,hd,ssd,ram,gabinete,fonte,placa_video,cooler_processador);
-
-
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("pecaprocessador","");
-        editor.putString("pecaplaca_mae","");
-        editor.putString("pecahd","");
-        editor.putString("pecassd","");
-        editor.putString("pecaram","");
-        editor.putString("pecagabinete","");
-        editor.putString("pecafonte","");
-        editor.putString("pecaplaca_video","");
-        editor.putString("pecacooler_processador","");
-        editor.putString("nomePC","");
-        editor.apply();
-        startActivity(listaComputadores);
+        //CHUTA PRA ESCANTEIO RONALDO
+        boolean dibrou = true;
+        try{
+            myDbHelper.inserePc(nomePcS,processador,placa_mae,hd,ssd,ram,gabinete,fonte,placa_video,cooler_processador);
+        }catch(Exception e){
+            CharSequence mensagem = "Nome de computador já existente, altere o nome por favor!";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context,mensagem, duration);
+            toast.show();
+            Intent intent = new Intent(this,Meu_PC.class);
+            startActivity(intent);
+            dibrou = false;
+        }
+        // É TAFAREL
+        if(dibrou){
+            CharSequence mensagem = "Salvo com sucesso!";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context,mensagem, duration);
+            toast.show();
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("pecaprocessador","");
+            editor.putString("pecaplaca_mae","");
+            editor.putString("pecahd","");
+            editor.putString("pecassd","");
+            editor.putString("pecaram","");
+            editor.putString("pecagabinete","");
+            editor.putString("pecafonte","");
+            editor.putString("pecaplaca_video","");
+            editor.putString("pecacooler_processador","");
+            editor.putString("nomePC","");
+            editor.apply();
+            Intent intent = new Intent(getApplicationContext(), Tela_Inicial.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            startActivity(listaComputadores);
+            finish();
+        }
     }
     protected void voltaMontagem(View view){
         Intent voltaMontagem = new Intent(this, Montando_PC.class);

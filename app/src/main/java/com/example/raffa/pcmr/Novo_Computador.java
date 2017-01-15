@@ -22,6 +22,16 @@ public class Novo_Computador extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("Objetivo", "trabalho");
+        editor.putString("pecaprocessador","");
+        editor.putString("pecaplaca_mae","");
+        editor.putString("pecahd","");
+        editor.putString("pecassd","");
+        editor.putString("pecaram","");
+        editor.putString("pecagabinete","");
+        editor.putString("pecafonte","");
+        editor.putString("pecaplaca_video","");
+        editor.putString("pecacooler_processador","");
+        editor.apply();
         editor.apply();
     }
     protected void chamaMontandoJogos(View view){
@@ -31,6 +41,15 @@ public class Novo_Computador extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("Objetivo", "jogos");
+        editor.putString("pecaprocessador","");
+        editor.putString("pecaplaca_mae","");
+        editor.putString("pecahd","");
+        editor.putString("pecassd","");
+        editor.putString("pecaram","");
+        editor.putString("pecagabinete","");
+        editor.putString("pecafonte","");
+        editor.putString("pecaplaca_video","");
+        editor.putString("pecacooler_processador","");
         editor.apply();
     }
     protected void chamaMontandoGeral(View view){
@@ -40,6 +59,15 @@ public class Novo_Computador extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("Objetivo", "geral");
+        editor.putString("pecaprocessador","");
+        editor.putString("pecaplaca_mae","");
+        editor.putString("pecahd","");
+        editor.putString("pecassd","");
+        editor.putString("pecaram","");
+        editor.putString("pecagabinete","");
+        editor.putString("pecafonte","");
+        editor.putString("pecaplaca_video","");
+        editor.putString("pecacooler_processador","");
         editor.apply();
     }
 }
